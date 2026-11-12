@@ -1,14 +1,15 @@
-import { useEffect, useRef } from 'react';
-import { AlertTriangle, Trash2, CheckCircle2, HelpCircle } from 'lucide-react';
-import './ConfirmModal.css';
+import { useEffect, useRef } from "react";
+import { AlertTriangle, Trash2, CheckCircle2, HelpCircle } from "lucide-react";
+import "./ConfirmModal.css";
 
+//confirm
 export default function ConfirmModal({
   isOpen,
-  title = '¿Estás seguro?',
+  title = "¿Estás seguro?",
   message,
-  confirmText = 'Confirmar',
-  cancelText = 'Cancelar',
-  variant = 'danger', // 'danger' | 'warning' | 'primary' | 'success'
+  confirmText = "Confirmar",
+  cancelText = "Cancelar",
+  variant = "danger", // 'danger' | 'warning' | 'primary' | 'success'
   onConfirm,
   onCancel,
 }) {
@@ -18,16 +19,16 @@ export default function ConfirmModal({
     if (!isOpen) return;
 
     const handleKeyDown = (e) => {
-      if (e.key === 'Escape') {
+      if (e.key === "Escape") {
         onCancel();
       }
     };
 
-    document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener("keydown", handleKeyDown);
     setTimeout(() => confirmBtnRef.current?.focus(), 50);
 
     return () => {
-      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener("keydown", handleKeyDown);
     };
   }, [isOpen, onCancel]);
 
@@ -35,25 +36,25 @@ export default function ConfirmModal({
 
   const renderIcon = () => {
     switch (variant) {
-      case 'danger':
+      case "danger":
         return (
           <div className="confirm-icon-wrapper confirm-icon-danger">
             <Trash2 size={24} />
           </div>
         );
-      case 'warning':
+      case "warning":
         return (
           <div className="confirm-icon-wrapper confirm-icon-warning">
             <AlertTriangle size={24} />
           </div>
         );
-      case 'success':
+      case "success":
         return (
           <div className="confirm-icon-wrapper confirm-icon-success">
             <CheckCircle2 size={24} />
           </div>
         );
-      case 'primary':
+      case "primary":
       default:
         return (
           <div className="confirm-icon-wrapper confirm-icon-info">
@@ -65,13 +66,13 @@ export default function ConfirmModal({
 
   const getConfirmButtonClass = () => {
     switch (variant) {
-      case 'danger':
-        return 'confirm-btn-danger';
-      case 'warning':
-        return 'confirm-btn-warning';
-      case 'primary':
+      case "danger":
+        return "confirm-btn-danger";
+      case "warning":
+        return "confirm-btn-warning";
+      case "primary":
       default:
-        return 'confirm-btn-primary';
+        return "confirm-btn-primary";
     }
   };
 
@@ -124,4 +125,3 @@ export default function ConfirmModal({
     </div>
   );
 }
-
