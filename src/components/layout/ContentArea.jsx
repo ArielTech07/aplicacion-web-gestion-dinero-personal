@@ -1,6 +1,6 @@
 import { Menu } from 'lucide-react';
 import './ContentArea.css';
-
+//intento
 export default function ContentArea({ title, subtitle, onOpenMobileMenu, children }) {
   return (
     <main className="content-area">
