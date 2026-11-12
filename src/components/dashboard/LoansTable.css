@@ -1,0 +1,148 @@
+.loans-table-wrapper {
+  background: var(--color-bg-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.loans-table-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.loans-table-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.loans-table-count {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-weight: 500;
+}
+
+.loans-table-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 600px) {
+  .loans-table-wrapper {
+    border-radius: var(--radius-md);
+  }
+
+  .loans-table-header {
+    padding: 14px 16px;
+  }
+
+  .loans-table-title {
+    font-size: var(--font-size-base);
+  }
+
+  .loans-table th,
+  .loans-table td {
+    padding: 11px 12px;
+  }
+
+  .loans-table {
+    min-width: 540px;
+  }
+}
+
+.loans-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.loans-table thead tr {
+  background: var(--color-bg-primary);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.loans-table th {
+  padding: 12px 20px;
+  text-align: left;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.loans-table td {
+  padding: 15px 20px;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.loans-table-row {
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.loans-table-row:hover {
+  background: var(--color-bg-sidebar-hover);
+}
+
+.loans-table-row:last-child td {
+  border-bottom: none;
+}
+
+.cliente-nombre {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.cell-monto,
+.cell-saldo {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.cell-saldo {
+  font-weight: 600;
+}
+
+.cell-dia {
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badge-success {
+  background: var(--color-success-light);
+  color: var(--color-success);
+}
+
+.badge-danger {
+  background: var(--color-danger-light);
+  color: var(--color-danger);
+}
+
+.badge-muted {
+  background: var(--color-border);
+  color: var(--color-text-secondary);
+}

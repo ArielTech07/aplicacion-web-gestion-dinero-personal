@@ -1,0 +1,537 @@
+/* ==========================================================================
+   MODAL STYLES (LIMPIO, MINIMALISTA, SIN ICONOS RECARGADOS)
+   ========================================================================== */
+
+/* Overlay con desenfoque sutil */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: overlayFadeIn 0.18s ease-out;
+}
+
+@keyframes overlayFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Contenedor del Modal */
+.modal-content {
+  background: #0d0d12;
+  border-radius: 14px;
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: modalPopIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-content.modal-detail-custom {
+  max-width: 520px;
+}
+
+@keyframes modalPopIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Header del Modal */
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 18px 22px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.modal-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+.modal-subtitle {
+  font-size: 0.813rem;
+  color: #94a3b8;
+  margin: 3px 0 0;
+  line-height: 1.4;
+}
+
+.modal-badge-id {
+  font-size: 0.688rem;
+  color: #a5b4fc;
+  font-weight: 600;
+  display: inline-block;
+  background: rgba(99, 102, 241, 0.12);
+  padding: 2px 7px;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  letter-spacing: 0.3px;
+}
+
+.modal-close {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.15s ease;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* Cuerpo del Modal */
+.modal-body {
+  padding: 20px 22px 24px;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Banner de éxito */
+.modal-success-banner {
+  background: rgba(16, 185, 129, 0.1);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.813rem;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   GRID FINANCIERO LIMPIO (Sin tarjetas infladas)
+   ========================================================================== */
+.loan-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.detail-label {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  font-weight: 600;
+}
+
+.detail-value {
+  font-size: 0.938rem;
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+.detail-value.detail-success {
+  color: #10b981;
+}
+
+/* ==========================================================================
+   BOTONES DE ACCIÓN DE COBRO
+   ========================================================================== */
+.loan-actions-clean {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ==========================================================================
+   BANNER DE ESTADO DE COBRO
+   ========================================================================== */
+.cobro-status-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.813rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.cobro-status-ready {
+  background: rgba(251, 191, 36, 0.08);
+  border: 1px solid rgba(251, 191, 36, 0.25);
+  color: #fbbf24;
+}
+
+.cobro-status-paid {
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  color: #6ee7b7;
+}
+
+/* Botón cobrar deshabilitado */
+.btn-cobrar-clean.btn-cobrar-disabled {
+  background: rgba(255, 255, 255, 0.04);
+  color: #64748b;
+  cursor: not-allowed;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.btn-cobrar-clean.btn-cobrar-disabled:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: #64748b;
+}
+
+.actions-clean-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.btn-cobrar-clean {
+  background: #10b981;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 14px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  text-align: center;
+}
+
+.btn-cobrar-clean:hover {
+  background: #059669;
+}
+
+.btn-liquidar-clean {
+  background: rgba(255, 255, 255, 0.06);
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 11px 14px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: center;
+}
+
+.btn-liquidar-clean:hover {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #f87171;
+}
+
+.amortizar-toggle-wrap {
+  text-align: center;
+  padding-top: 2px;
+}
+
+.btn-amortizar-toggle {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 0.775rem;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease;
+}
+
+.btn-amortizar-toggle:hover {
+  color: #e2e8f0;
+}
+
+.amortizar-clean-box {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.amortizar-row {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-confirm-amortizar {
+  background: #4f46e5;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 0 16px;
+  font-size: 0.813rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-confirm-amortizar:hover {
+  background: #4338ca;
+}
+
+.loan-closed-clean {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.813rem;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   HISTORIAL DE COBROS (Tabla sobria y directa)
+   ========================================================================== */
+.modal-history-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 14px;
+}
+
+.modal-history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-history-title {
+  font-size: 0.813rem;
+  font-weight: 700;
+  color: #cbd5e1;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin: 0;
+}
+
+.modal-history-count {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.modal-history-empty {
+  font-size: 0.813rem;
+  color: #64748b;
+  text-align: center;
+  padding: 12px;
+  margin: 0;
+}
+
+.history-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+}
+
+.history-clean-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.813rem;
+}
+
+.history-clean-table th {
+  background: rgba(255, 255, 255, 0.02);
+  color: #64748b;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.72rem;
+  padding: 8px 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.history-clean-table td {
+  padding: 9px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  color: #e2e8f0;
+}
+
+.history-clean-table tr:last-child td {
+  border-bottom: none;
+}
+
+.history-date-col {
+  color: #94a3b8;
+  white-space: nowrap;
+}
+
+.history-concept {
+  color: #cbd5e1;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   FORMULARIOS (Nuevo Préstamo / Nuevo Cliente)
+   ========================================================================== */
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.modal-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.modal-form-label {
+  font-size: 0.813rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  letter-spacing: -0.1px;
+}
+
+.modal-form-input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  background: #14141b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.875rem;
+  color: #f8fafc;
+  font-weight: 500;
+  transition: all 0.15s ease;
+  outline: none;
+}
+
+.modal-form-input::placeholder {
+  color: #64748b;
+  font-weight: 400;
+}
+
+.modal-form-input:focus {
+  border-color: #6366f1;
+  background: #181822;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+.form-two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.modal-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 6px;
+}
+
+.modal-form-submit {
+  width: 100%;
+  background: #4f46e5;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 16px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.modal-form-submit:hover {
+  background: #4338ca;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (Móvil)
+   ========================================================================== */
+@media (max-width: 600px) {
+  .modal-overlay {
+    padding: 8px;
+    align-items: flex-end;
+  }
+
+  .modal-content {
+    max-height: 92vh;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .modal-header {
+    padding: 14px 16px 12px;
+  }
+
+  .modal-title {
+    font-size: 1rem;
+  }
+
+  .modal-subtitle {
+    font-size: 0.75rem;
+  }
+
+  .modal-body {
+    padding: 14px 16px 18px;
+    gap: 12px;
+  }
+
+  .form-two-columns,
+  .loan-detail-grid,
+  .actions-clean-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .modal-form-actions {
+    flex-direction: column-reverse;
+    gap: 8px;
+  }
+
+  .modal-form-actions button {
+    width: 100%;
+  }
+}
