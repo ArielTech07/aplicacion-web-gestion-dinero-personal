@@ -1,7 +1,12 @@
-import { Menu } from 'lucide-react';
-import './ContentArea.css';
-//intento
-export default function ContentArea({ title, subtitle, onOpenMobileMenu, children }) {
+import { Menu } from "lucide-react";
+import "./ContentArea.css";
+//intent
+export default function ContentArea({
+  title,
+  subtitle,
+  onOpenMobileMenu,
+  children,
+}) {
   return (
     <main className="content-area">
       {/* Barra superior visible solo en móviles */}
